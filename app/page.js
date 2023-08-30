@@ -8,8 +8,8 @@ function Home() {
     const fetchCoins = async() => {
         try {
             const res = await fetch('https://api.coinlore.net/api/tickers/');
-            const coin = await res.json();
-            setCoins(coin.data.slice(0, 20));
+            const coinData = await res.json();
+            setCoins(coinData.data.slice(0, 20));
         } catch (error) {
             console.log('Error: ', err);
         }
